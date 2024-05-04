@@ -38,13 +38,28 @@ pipeline {
             }
           }
         }
-    stage('OCI Image BnP') {
-        steps {
+       stage('OCI Image BnP') {
+         steps {
           container('kaniko') {
            sh '/kaniko/executor -f `pwd`/Dockerfile -c `pwd` --insecure --skip-tls-verify --cache=true --destination=docker.io/iwebhost4u/dso-demo'
           }
         }
       }
+      stage('SCA'){
+        steps{
+          container('maven'){
+            catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
+              sh 'mvn org.owasp:dependency-check-maven:check'
+            }
+          } 
+        }
+        post{
+          always{
+            archiveArtifacts allowEmptyArchive: true, artifacts: 'target/dependency-check-report.html', fingerprint: true, onlyIfSuccessful: true
+            // dependencyCheckPublisher pattern: 'report.xml'
+         }
+        }
+       }
       }
     }
 
