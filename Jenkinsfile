@@ -67,8 +67,7 @@ pipeline {
          steps {
            script{
              container('slscan'){
-               sh 'scan --type java'
-               sh 'depscan --build'
+               sh 'scan --type java,depscan --build'
              }
            }
          }
