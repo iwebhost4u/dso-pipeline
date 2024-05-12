@@ -40,21 +40,21 @@
   - :who: 
     :why: 
     :versions:
-    - 1.2.13
+    - 1.2.3
     :when: 2020-05-31 15:28:30.302764000 Z
 - - :approve
   - logback-classic
   - :who: 
     :why: 
     :versions:
-    - 1.2.13
+    - 1.2.3
     :when: 2020-05-31 15:29:03.621478000 Z
 - - :approve
   - jakarta.xml.bind-api
   - :who: 
     :why: 
     :versions:
-    - 2.3.13
+    - 2.3.3
     :when: 2020-05-31 15:29:19.300525000 Z
 - - :approve
   - jakarta.el
