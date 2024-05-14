@@ -95,7 +95,22 @@ pipeline {
       }
       }
     }
-
+    stage('Image Linting') {
+      steps {
+        container('docker-tools') {
+          sh 'dockle docker.io/iwebhost4u/dso-demo'
+        }
+      }
+    }
+    stage('Image Scan') {
+      steps {
+        container('docker-tools') {
+          sh 'trivy image --timeout 10m --exit-code 1 iwebhost4u/dso-demo'
+          }
+      }
+    }
+  }
+}
     stage('Deploy to Dev') {
       steps {
         // TODO
