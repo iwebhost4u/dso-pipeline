@@ -35,20 +35,6 @@ pipeline {
            }
           }
          }
-       stage('SAST') {
-         steps {
-           script{
-             container('slscan'){
-               sh 'scan --type java,depscan --build'
-             }
-           }
-         }
-         post{
-           success{
-            archiveArtifacts allowEmptyArchive: true, artifacts: 'reports/*', fingerprint: true, onlyIfSuccessful: true
-           }
-         }
-       }
        stage('Generate SBOM') {
          steps{
            container('maven') {
