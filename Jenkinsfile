@@ -61,6 +61,8 @@ pipeline {
            }
          }
        }
+      }
+    }
     stage('SAST') {
          steps {
            script{
@@ -75,8 +77,6 @@ pipeline {
            }
          }
        }
-      }
-    }
     stage('Package') {
       parallel {
         stage('Create Jarfile') {
