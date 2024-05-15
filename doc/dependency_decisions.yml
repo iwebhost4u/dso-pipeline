@@ -78,7 +78,7 @@
     - 1.2.13
     :when: 2020-05-31 15:29:53.045616000 Z
 - - :approve
-  - org.apache.logging.log4j-api
+  - log4j-api
   - :who: 
     :why: 
     :versions:
