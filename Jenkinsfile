@@ -3,6 +3,13 @@ pipeline {
     // Other environment variables
      ARGO_SERVER = '34.172.63.196:32100'
   }
+  agent {
+    kubernetes {
+      yamlFile 'build-agent.yaml'
+      defaultContainer 'maven'
+      idleMinutes 1
+    }
+  }
   stages {
     stage('Build') {
       parallel {
