@@ -20,7 +20,7 @@ pipeline {
     }
     stage('Test') {
       parallel {
-        stage('Unit Tests') {
+        stage('Unit Tests here') {
           steps {
             container('maven') {
               sh 'mvn test'
@@ -36,6 +36,12 @@ pipeline {
             container('maven') {
               sh 'mvn package -DskipTests'
             }
+          }
+        }
+        stage('OCI Image BnP') {
+          steps {
+            container('kaniko') {
+              sh '/kaniko/executor -f `pwd`/Dockerfile -c `pwd` --insecure --skip-tls-verify --cache=true --destination=docker.io/iwebhost4u/dso-pipeline'
           }
         }
       }
