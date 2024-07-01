@@ -31,7 +31,7 @@ pipeline {
     }
     stage('Package') {
       parallel {
-        stage('Create Jarfile') {
+        stage('Create Jar File') {
           steps {
             container('maven') {
               sh 'mvn package -DskipTests'
