@@ -47,7 +47,7 @@
   - :who: 
     :why: 
     :versions:
-    - 1.2.3
+    - 1.2.13
     :when: 2020-05-31 15:29:03.621478000 Z
 - - :approve
   - log4j-api
