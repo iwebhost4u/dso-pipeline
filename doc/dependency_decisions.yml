@@ -35,14 +35,14 @@
     :why: 
     :versions: []
     :when: 2020-05-31 15:27:29.688403000 Z
-- - :permit
+- - :approve
   - logback-core
   - :who: 
     :why: 
     :versions:
     - 1.2.3
     :when: 2020-05-31 15:28:30.302764000 Z
-- - :permit
+- - :approve
   - logback-classic
   - :who: 
     :why: 
