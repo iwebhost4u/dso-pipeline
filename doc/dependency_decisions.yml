@@ -39,13 +39,15 @@
   - logback-core
   - :who: 
     :why: 
-    :versions: []
+    :versions:
+    - 1.2.3
     :when: 2020-05-31 15:28:30.302764000 Z
 - - :permit
   - logback-classic
   - :who: 
     :why: 
-    :versions: []
+    :versions:
+    - 1.2.3
     :when: 2020-05-31 15:29:03.621478000 Z
 - - :approve
   - log4j-api
